@@ -204,7 +204,6 @@ class Markdown extends MarkdownWidget {
     SyntaxHighlighter syntaxHighlighter,
     MarkdownTapLinkCallback onTapLink,
     Directory imageDirectory,
-    this.padding: const EdgeInsets.all(16.0),
   }) : super(
     key: key,
     data: data,
@@ -214,11 +213,8 @@ class Markdown extends MarkdownWidget {
     imageDirectory: imageDirectory,
   );
 
-  /// The amount of space by which to inset the children.
-  final EdgeInsets padding;
-
   @override
   Widget build(BuildContext context, List<Widget> children) {
-    return new ListView(padding: padding, children: children);
+    return new Column(children: children);
   }
 }
